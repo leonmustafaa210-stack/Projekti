@@ -52,13 +52,13 @@
           <form id="auth-form" novalidate>
             <div class="field is-hidden" id="name-field">
               <label for="full-name">Emri dhe mbiemri</label>
-              <input id="full-name" name="name" type="text" autocomplete="name" placeholder="p.sh. Arta Krasniqi" minlength="2">
+              <input id="full-name" name="name" type="text" autocomplete="name" placeholder="p.sh. Arta Krasniqi" minlength="3" aria-describedby="name-error">
               <span class="field-error" id="name-error"></span>
             </div>
 
             <div class="field">
               <label for="email">Adresa e emailit</label>
-              <input id="email" name="email" type="email" autocomplete="email" placeholder="emri@shembull.com" required>
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="emri@shembull.com" required aria-describedby="email-error">
               <span class="field-error" id="email-error"></span>
             </div>
 
@@ -68,12 +68,18 @@
                 <button class="text-button is-hidden" id="forgot-button" type="button">E harrove?</button>
               </div>
               <div class="password-wrap">
-                <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Të paktën 8 karaktere" minlength="8" required>
+                <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Të paktën 8 karaktere" minlength="8" required aria-describedby="password-error">
                 <button class="visibility-button" id="toggle-password" type="button" aria-label="Shfaq fjalëkalimin" title="Shfaq fjalëkalimin">
                   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12s3.3-6 9.5-6 9.5 6 9.5 6-3.3 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.7"/></svg>
                 </button>
               </div>
               <span class="field-error" id="password-error"></span>
+            </div>
+
+            <div class="field is-hidden" id="confirm-password-field">
+              <label for="confirm-password">Konfirmo fjalëkalimin</label>
+              <input id="confirm-password" name="confirm-password" type="password" autocomplete="new-password" placeholder="Shkruaje përsëri fjalëkalimin" aria-describedby="confirm-password-error">
+              <span class="field-error" id="confirm-password-error"></span>
             </div>
 
             <label class="terms-row is-hidden" id="terms-field">
@@ -90,7 +96,7 @@
           </form>
 
           <p class="switch-prompt" id="switch-prompt">Nuk ke llogari? <button class="text-button" type="button" data-switch="register">Regjistrohu</button></p>
-          <p class="secure-note"><span aria-hidden="true">✳</span> Të dhënat e tua mbrohen dhe mbeten private.</p>
+          <p class="secure-note"><span aria-hidden="true">✳</span> Hyrja dhe regjistrimi real kërkojnë server të sigurt.</p>
         </div>
         <footer class="form-footer"><span>© 2025 Nisja</span><a href="mailto:pershendetje@nisja.al">Na kontakto</a></footer>
       </section>
