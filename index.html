@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="sq">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f4ef">
+    <title>Hyrje dhe regjistrim</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="welcome-panel" aria-label="Mirë se vini">
+        <a class="brand" href="#" aria-label="Nisja - faqja kryesore">
+          <span class="brand-mark" aria-hidden="true">n</span>
+          <span>nisja</span>
+        </a>
+
+        <div class="welcome-copy">
+          <p class="eyebrow">HAPI I PARË, MË I THJESHTI</p>
+          <h1>Gjërat e mira<br>fillojnë këtu.</h1>
+          <p class="welcome-description">Hyr në llogarinë tënde ose krijo një të re. Vendi yt është gati.</p>
+        </div>
+
+        <div class="welcome-note">
+          <span class="note-line" aria-hidden="true"></span>
+          <p>Një hap i vogël sot.<br><strong>Një fillim i ri nesër.</strong></p>
+        </div>
+        <span class="panel-orbit orbit-one" aria-hidden="true"></span>
+        <span class="panel-orbit orbit-two" aria-hidden="true"></span>
+      </section>
+
+      <section class="form-panel" aria-labelledby="form-title">
+        <div class="mobile-brand" aria-hidden="true">
+          <span class="brand-mark">n</span><span>nisja</span>
+        </div>
+        <div class="form-wrap">
+          <div class="form-heading">
+            <p class="eyebrow" id="form-eyebrow">MIRË SE U KTHEVE</p>
+            <h2 id="form-title">Hyr në llogari</h2>
+            <p class="form-intro" id="form-intro">Shkruaj të dhënat për të vazhduar.</p>
+          </div>
+
+          <div class="mode-switch" role="tablist" aria-label="Zgjidh veprimin">
+            <button class="mode-button is-active" id="login-tab" type="button" role="tab" aria-selected="true" aria-controls="auth-form" data-mode="login">Hyrje</button>
+            <button class="mode-button" id="register-tab" type="button" role="tab" aria-selected="false" aria-controls="auth-form" data-mode="register">Regjistrim</button>
+          </div>
+
+          <form id="auth-form" novalidate>
+            <div class="field is-hidden" id="name-field">
+              <label for="full-name">Emri dhe mbiemri</label>
+              <input id="full-name" name="name" type="text" autocomplete="name" placeholder="p.sh. Arta Krasniqi" minlength="2">
+              <span class="field-error" id="name-error"></span>
+            </div>
+
+            <div class="field">
+              <label for="email">Adresa e emailit</label>
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="emri@shembull.com" required>
+              <span class="field-error" id="email-error"></span>
+            </div>
+
+            <div class="field">
+              <div class="label-row">
+                <label for="password">Fjalëkalimi</label>
+                <button class="text-button is-hidden" id="forgot-button" type="button">E harrove?</button>
+              </div>
+              <div class="password-wrap">
+                <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Të paktën 8 karaktere" minlength="8" required>
+                <button class="visibility-button" id="toggle-password" type="button" aria-label="Shfaq fjalëkalimin" title="Shfaq fjalëkalimin">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12s3.3-6 9.5-6 9.5 6 9.5 6-3.3 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.7"/></svg>
+                </button>
+              </div>
+              <span class="field-error" id="password-error"></span>
+            </div>
+
+            <label class="terms-row is-hidden" id="terms-field">
+              <input id="terms" name="terms" type="checkbox">
+              <span>Pajtohem me <a href="#terms">kushtet e përdorimit</a> dhe <a href="#privacy">politikën e privatësisë</a>.</span>
+            </label>
+            <span class="field-error terms-error" id="terms-error"></span>
+
+            <button class="submit-button" id="submit-button" type="submit">
+              <span id="submit-label">Hyr në llogari</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+            <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+          </form>
+
+          <p class="switch-prompt" id="switch-prompt">Nuk ke llogari? <button class="text-button" type="button" data-switch="register">Regjistrohu</button></p>
+          <p class="secure-note"><span aria-hidden="true">✳</span> Të dhënat e tua mbrohen dhe mbeten private.</p>
+        </div>
+        <footer class="form-footer"><span>© 2025 Nisja</span><a href="mailto:pershendetje@nisja.al">Na kontakto</a></footer>
+      </section>
+    </main>
+  </body>
+</html>
